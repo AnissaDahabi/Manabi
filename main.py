@@ -1,6 +1,7 @@
 from gestion_bdd import afficher_mots
 from gestion_bdd import ajouter_mot
 from gestion_bdd import supprimer_mot
+from gestion_bdd import editer_mot
 
 # main.py
 
@@ -10,6 +11,7 @@ while True:
     print("1. Afficher les mots")
     print("2. Ajouter un mot")
     print("3. Supprimer un mot")
+    print("4. Editer un mot")
     print("0. Quitter")
     choix = input("Entrez votre choix : ")
 
@@ -19,6 +21,8 @@ while True:
         ajouter_mot()
     elif choix == "3":
         supprimer_mot()
+    elif choix == "4":
+        editer_mot()
     elif choix == "0":
         print("Au revoir !")
         break

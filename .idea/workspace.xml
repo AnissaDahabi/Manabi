@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2919bd4a-7aab-45b0-a619-f5107c7e9a8a" name="Changes" comment="First commit, checking if the afficher_mots() works">
+    <list default="true" id="2919bd4a-7aab-45b0-a619-f5107c7e9a8a" name="Changes" comment="ajouter_mot() and supprimer_mot() functional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestion_bdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestion_bdd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -91,12 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772621072532</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ajouter_mot() and supprimer_mot() functional">
+      <option name="closed" value="true" />
+      <created>1772623663617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772623663617</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit, checking if the afficher_mots() works" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit, checking if the afficher_mots() works" />
+    <MESSAGE value="ajouter_mot() and supprimer_mot() functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajouter_mot() and supprimer_mot() functional" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
