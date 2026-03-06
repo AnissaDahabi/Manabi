@@ -35,7 +35,11 @@ QWidget#sidebar_widget {
     background-color: #F3EEDD;
 }
 
-QWidget#sidebar_widget QPushButton {
+#label_parcourir, #label_parametres {
+    background-color: transparent;
+}
+
+#sidebar_widget QPushButton {
     background-color: transparent;
     border: none;
     color: #59393F;
@@ -44,7 +48,7 @@ QWidget#sidebar_widget QPushButton {
     padding-left: 5px;
 }
 
-QWidget#sidebar_widget QPushButton:hover {
+#sidebar_widget QPushButton:hover {
     color: #D8A4AF;
 }
 
@@ -79,4 +83,47 @@ QTableWidget::item:!selected:alternate {
 
 QTableWidget::item:!selected {
     background-color: #FBF7E8;
+}
+
+QWidget {
+    background-color: #FBF7E8;
+}
+
+/* Card */
+#card_mot {
+    background-color: #F3EEDD;
+    padding: 30px;
+    max-width: 500px;
+    border: 1px solid #e6dfd2;
+}
+
+#mot_id {
+    font-size: 12px;
+    color: #59393F;
+    background-color: transparent;
+}
+
+#kanji_label {
+    font-size: 56px;
+    font-weight: bold;
+    color: #59393F;
+    background-color: transparent;
+}
+
+#lecture_trad {
+    font-size: 24px;
+    color: #74404C;
+    background-color: transparent;
+}
+
+#exemple, #trad_exemple, #niveau_label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #86616A;
+    background-color: transparent;
+}
+
+QTextEdit {
+    border: none;
+    background: transparent;
 }

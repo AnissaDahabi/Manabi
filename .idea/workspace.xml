@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2919bd4a-7aab-45b0-a619-f5107c7e9a8a" name="Changes" comment="GUI started">
-      <change afterPath="$PROJECT_DIR$/images/logoAccueil.png" afterDir="false" />
+    <list default="true" id="2919bd4a-7aab-45b0-a619-f5107c7e9a8a" name="Changes" comment="GUI continued">
+      <change afterPath="$PROJECT_DIR$/gui/page_afficher_mot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/ajouter_popup.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/page_afficher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestion_bdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestion_bdd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/modifier_popup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/page_afficher.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/page_afficher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/styles.qss" beforeDir="false" afterPath="$PROJECT_DIR$/gui/styles.qss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -65,6 +65,7 @@
     "Python.main_window.executor": "Run",
     "Python.page_afficher.executor": "Run",
     "Python.services.executor": "Run",
+    "Python.vue.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -146,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772665661730</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="GUI continued">
+      <option name="closed" value="true" />
+      <created>1772785853586</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772785853586</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,7 +165,8 @@
     <MESSAGE value="little fix" />
     <MESSAGE value="Added sqlite3, made the 4 functions functional again" />
     <MESSAGE value="GUI started" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI started" />
+    <MESSAGE value="GUI continued" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI continued" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -24,18 +24,10 @@ def initialiser_bdd():
     print("Base de données initialisée avec succès !")
 
 
-def afficher_mots(curseur, connexion):
+def afficher_mots(curseur): # Retirez ", connexion"
     curseur.execute("SELECT * FROM mots")
     mots = curseur.fetchall()
-
-    for mot in mots:
-        print(f"{mot[0]}. {mot[1]} ({mot[2]} - {mot[3]})")
-        print(f"   Exemple : {mot[4]}")
-        print(f"   Traduction : {mot[5]}")
-        print(f"   Niveau : {mot[6]}")
-        print(f"   Prochaine révision : {mot[7]}")
-        print(f"   Intervalle : {mot[8]} minutes, Répétitions : {mot[9]}")
-        print("-" * 40)
+    return mots
 
 
 def ajouter_mot(curseur, connexion):
