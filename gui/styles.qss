@@ -1,0 +1,82 @@
+/* Main window */
+QMainWindow {
+    background-color: #FBF7E8;
+}
+
+/* Labels */
+QLabel {
+    font-size: 22px;
+    font-weight: bold;
+    color: #59393F;
+}
+
+/* Boutons */
+QPushButton {
+    background-color: #D8A4AF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    min-width: 100px;
+    min-height: 40px;
+}
+
+QPushButton:hover {
+    background-color: #9D6673;
+}
+
+QPushButton:pressed {
+    background-color: #9D6673;
+}
+
+/* Sidebar */
+QWidget#sidebar_widget {
+    background-color: #F3EEDD;
+}
+
+QWidget#sidebar_widget QPushButton {
+    background-color: transparent;
+    border: none;
+    color: #59393F;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 5px;
+}
+
+QWidget#sidebar_widget QPushButton:hover {
+    color: #D8A4AF;
+}
+
+/* Tableau */
+QTableWidget {
+    gridline-color: #86616A;
+    color: #4A393D;
+    font-size: 12px;
+    border: none;
+}
+
+QHeaderView::section {
+    background-color: #4A393D;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+}
+
+QTableWidget::item {
+    padding: 5px;
+}
+
+QTableWidget::item:selected {
+    background-color: #DEEAC9;
+    color: #74404C;
+}
+
+QTableWidget::item:!selected:alternate {
+    background-color: #F3EEDD;
+}
+
+QTableWidget::item:!selected {
+    background-color: #FBF7E8;
+}
