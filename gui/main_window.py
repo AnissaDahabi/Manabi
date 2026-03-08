@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         acc_layout = QVBoxLayout(self.page_accueil)
         acc_layout.setContentsMargins(50, 50, 50, 50)
 
-        label_accueil = QLabel("Bienvenue sur Manabi!")
+        label_accueil = QLabel("Bienvenue sur Manabi!\n L’application numéro 1 pour apprendre vos kanjis :)")
         label_accueil.setAlignment(Qt.AlignCenter)
         acc_layout.addWidget(label_accueil)
 

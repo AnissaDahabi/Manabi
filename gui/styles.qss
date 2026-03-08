@@ -133,3 +133,29 @@ QTableWidget {
     color: #86616A;
     background-color: transparent;
 }
+
+.QLabelForm {
+    color: #59393F;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+}
+
+.QLineEditForm {
+    color: #74404C;
+    font-size: 16px;
+    border: 1px solid #D8A4AF;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: transparent;
+}
+
+#card_mot_ajouter {
+    background-color: #F3EEDD;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid #e6dfd2;
+    border-radius: 10px;
+}
