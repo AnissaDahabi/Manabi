@@ -19,14 +19,10 @@ class PageAfficher(QWidget):
         sidebar_widget.setObjectName("sidebar_widget")
         sidebar_widget.setFixedWidth(150)
         sidebar = QVBoxLayout(sidebar_widget)
-
-        label_parcourir = QLabel("Parcourir")
-        sidebar.addWidget(label_parcourir)
-
+        sidebar.addWidget(QLabel("Parcourir"))
         for niveau in ["JLPT N5", "JLPT N4", "JLPT N3", "JLPT N2", "JLPT N1"]:
             btn = QPushButton(niveau)
             btn.setFlat(True)
-            btn.setCursor(Qt.PointingHandCursor)
             sidebar.addWidget(btn)
         sidebar.addStretch()
         main_layout.addWidget(sidebar_widget)
@@ -41,7 +37,6 @@ class PageAfficher(QWidget):
         self.btn_retour.setFixedSize(100, 40)
         self.btn_retour.setCursor(Qt.PointingHandCursor)
         self.btn_retour.clicked.connect(retour_callback)
-
         header_layout.addWidget(self.btn_retour)
         header_layout.addStretch()
         content_layout.addLayout(header_layout)
@@ -55,24 +50,21 @@ class PageAfficher(QWidget):
         self.table = QTableWidget()
         self.table.setColumnCount(4)
         self.table.setHorizontalHeaderLabels(["ID", "Kanji", "Lecture", "Traduction"])
-
         self.table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.table.setSelectionMode(QAbstractItemView.SingleSelection)
         self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.table.setFocusPolicy(Qt.NoFocus)
         self.table.verticalHeader().setVisible(False)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
         self.table.cellDoubleClicked.connect(self.ouvrir_page_details)
-
         content_layout.addWidget(self.table)
 
+        # Footer
         footer_layout = QHBoxLayout()
         self.btn_ajouter = QPushButton("Ajouter")
         self.btn_ajouter.setFixedSize(150, 45)
         self.btn_ajouter.setCursor(Qt.PointingHandCursor)
         self.btn_ajouter.clicked.connect(self.ouvrir_page_ajouter)
-
         footer_layout.addStretch()
         footer_layout.addWidget(self.btn_ajouter)
         footer_layout.addStretch()
@@ -80,7 +72,6 @@ class PageAfficher(QWidget):
         content_layout.addLayout(footer_layout)
 
         main_layout.addLayout(content_layout)
-
         self.charger_mots()
 
     def charger_mots(self):
@@ -96,21 +87,22 @@ class PageAfficher(QWidget):
         id_mot = self.table.item(row, 0).text()
         from .page_afficher_mot import PageAfficherMot
 
-        retour_ici = lambda: self.stacked_widget.setCurrentIndex(1)
+        def retour_et_reload():
+            self.stacked_widget.setCurrentIndex(1)
+            self.charger_mots()
 
-        self.page_detail = PageAfficherMot(self.curseur, id_mot, retour_ici)
+        self.page_detail = PageAfficherMot(self.curseur, id_mot, retour_et_reload)
         self.stacked_widget.addWidget(self.page_detail)
         self.stacked_widget.setCurrentWidget(self.page_detail)
 
     def ouvrir_page_ajouter(self):
         from .page_ajouter_mot import PageAjouterMot
-
         connexion = self.curseur.connection
 
-        def retour_et_rafraichir():
+        def retour_et_reload():
             self.stacked_widget.setCurrentIndex(1)
             self.charger_mots()
 
-        self.page_ajouter = PageAjouterMot(self.curseur, connexion, retour_et_rafraichir)
+        self.page_ajouter = PageAjouterMot(self.curseur, connexion, retour_et_reload)
         self.stacked_widget.addWidget(self.page_ajouter)
         self.stacked_widget.setCurrentWidget(self.page_ajouter)

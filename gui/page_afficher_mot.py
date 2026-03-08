@@ -1,6 +1,7 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QFrame, QSizePolicy
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QFrame, QSizePolicy, QMessageBox
 from PySide6.QtCore import Qt
-from gestion_bdd import obtenir_details_mot
+from gestion_bdd import obtenir_details_mot, supprimer_mot_bdd
+
 
 class PageAfficherMot(QWidget):
     def __init__(self, curseur, id_mot, retour_callback):
@@ -8,6 +9,7 @@ class PageAfficherMot(QWidget):
         self.setAttribute(Qt.WA_StyledBackground, True)
         self.curseur = curseur
         self.id_mot = id_mot
+        self.retour_callback = retour_callback
 
         main_layout = QHBoxLayout(self)
 
@@ -55,7 +57,8 @@ class PageAfficherMot(QWidget):
         self.label_niveau = QLabel()
         self.label_niveau.setObjectName("niveau_label")
 
-        for lbl in [self.label_kanji, self.label_lecture_trad, self.label_exemple, self.label_trad_exemple, self.label_niveau]:
+        for lbl in [self.label_kanji, self.label_lecture_trad, self.label_exemple, self.label_trad_exemple,
+                    self.label_niveau]:
             lbl.setAlignment(Qt.AlignCenter)
             card_layout.addWidget(lbl)
 
@@ -67,8 +70,12 @@ class PageAfficherMot(QWidget):
         actions_layout = QHBoxLayout()
         actions_layout.setAlignment(Qt.AlignCenter)
         self.btn_modifier = QPushButton("Modifier")
+        self.btn_modifier.clicked.connect(self.ouvrir_page_modifier)
+
         self.btn_supprimer = QPushButton("Supprimer")
         self.btn_supprimer.setObjectName("btn_supprimer")
+        self.btn_supprimer.clicked.connect(self.confirmer_suppression)
+
         actions_layout.addWidget(self.btn_modifier)
         actions_layout.addWidget(self.btn_supprimer)
         content_area.addLayout(actions_layout)
@@ -84,3 +91,33 @@ class PageAfficherMot(QWidget):
             self.label_exemple.setText(mot[3])
             self.label_trad_exemple.setText(mot[4])
             self.label_niveau.setText(f"Niveau : {mot[5]}")
+
+    def ouvrir_page_modifier(self):
+        from .page_modifier_mot import PageModifierMot
+        connexion = self.curseur.connection
+
+        def valider_modification():
+            self.charger_mot()
+            self.retour_callback()
+
+        self.page_mod = PageModifierMot(self.curseur, connexion, self.id_mot, valider_modification)
+        stacked = self.window().pages
+        stacked.addWidget(self.page_mod)
+        stacked.setCurrentWidget(self.page_mod)
+
+    def confirmer_suppression(self):
+        msg_box = QMessageBox(self)
+        msg_box.setWindowTitle("Confirmation")
+        msg_box.setText("Êtes-vous sûr de vouloir supprimer ce mot ?")
+        msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        msg_box.setDefaultButton(QMessageBox.No)
+
+        reponse = msg_box.exec()
+
+        if reponse == QMessageBox.Yes:
+            try:
+                connexion = self.curseur.connection
+                supprimer_mot_bdd(self.curseur, connexion, self.id_mot)
+                self.retour_callback()
+            except Exception as e:
+                print(f"Erreur lors de la suppression : {e}")

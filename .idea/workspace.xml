@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2919bd4a-7aab-45b0-a619-f5107c7e9a8a" name="Changes" comment="Flashcard's look finalized">
-      <change afterPath="$PROJECT_DIR$/gui/page_ajouter_mot.py" afterDir="false" />
+    <list default="true" id="2919bd4a-7aab-45b0-a619-f5107c7e9a8a" name="Changes" comment="function to add words functional">
+      <change afterPath="$PROJECT_DIR$/gui/page_modifier_mot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestion_bdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/gestion_bdd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/page_afficher.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/page_afficher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/page_afficher_mot.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/page_afficher_mot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/styles.qss" beforeDir="false" afterPath="$PROJECT_DIR$/gui/styles.qss" afterDir="false" />
@@ -171,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772833308015</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="function to add words functional">
+      <option name="closed" value="true" />
+      <created>1772985875518</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772985875518</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -184,7 +191,18 @@
     <MESSAGE value="GUI continued" />
     <MESSAGE value="Started working on the flashcard's look" />
     <MESSAGE value="Flashcard's look finalized" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flashcard's look finalized" />
+    <MESSAGE value="function to add words functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="function to add words functional" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/gui/page_afficher.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
